@@ -1,0 +1,52 @@
+Python libraries for different data science tasks:
+
+Python Libraries for Data Collection
+
+    Beautiful Soup
+    Scrapy
+    Selenium
+
+Python Libraries for Data Cleaning and Manipulation
+
+    Pandas
+    PyOD
+    NumPy
+    Spacy
+
+Python Libraries for Data Visualization
+
+    Matplotlib
+    Seaborn
+    Bokeh
+
+Python Libraries for Modeling
+
+    Scikit-learn
+    TensorFlow
+    PyTorch
+
+Python Libraries for Model Interpretability
+
+    Lime
+    H2O
+
+Python Libraries for Audio Processing
+
+    Librosa
+    Madmom
+    pyAudioAnalysis
+
+Python Libraries for Image Processing
+
+    OpenCV-Python
+    Scikit-image
+    Pillow
+
+Python Libraries for Database
+
+    Psycopg
+    SQLAlchemy
+
+Python Libraries for Deployment
+
+    Flask
