@@ -1,29 +1,26 @@
-import time
-import cv2
-import mss
-import numpy
+import numpy as np 
+import cv2 
+from PIL import ImageGrab
 
+# four character code object for video writer
+fourcc = cv2.VideoWriter_fourcc(*'XVID')
+# video writer object
+out = cv2.VideoWriter("output.avi", fourcc, 24.0, (1366, 768))
 
-with mss.mss() as sct:
-    # Part of the screen to capture
-    monitor = {'top': 40, 'left': 0, 'width': 800, 'height': 640}
+while True:
+	# capture computer screen
+	img = ImageGrab.grab()
+	# convert image to numpy array
+	img_np = np.array(img)
+	# convert color space from BGR to RGB
+	frame = cv2.cvtColor(img_np, cv2.COLOR_BGR2RGB)
+	# show image on OpenCV frame
+	cv2.imshow("Screen", frame)
+	# write frame to video writer
+	out.write(frame)
+  
+	if cv2.waitKey(1) == 27:
+		break
 
-    while 'Screen capturing':
-        last_time = time.time()
-
-        # Get raw pixels from the screen, save it to a Numpy array
-        img = numpy.array(sct.grab(monitor))
-
-        # Display the picture
-        cv2.imshow('OpenCV/Numpy normal', img)
-
-        # Display the picture in grayscale
-        # cv2.imshow('OpenCV/Numpy grayscale',
-        # cv2.cvtColor(img, cv2.COLOR_BGRA2GRAY))
-
-        print('fps: {0}'.format(1 / (time.time()-last_time)))
-
-        # Press "q" to quit
-        if cv2.waitKey(25) & 0xFF == ord('q'):
-            cv2.destroyAllWindows()
-            break
+out.release()
+cv2.destroyAllWindows()

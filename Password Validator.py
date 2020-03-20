@@ -22,11 +22,6 @@ Write a program to checks if the user input is a valid password or not.
 """
 import string #imports string module
 
-p=input('Enter your Password : \n')
+p=input('Enter the password: ')
 
-if((4<len(p)<11) and any(x in string.digits for x in p) and any(x in string.ascii_letters for x in p) and any(x in string.punctuation for x in p) and (' ' not in p)):
-    print('Password Valid')
-else:
-    print('Password Invalid')
-
-#if all the if are satisfied then Password Valid else Password Invalid
+print((4<len(p)<11) and any(x in string.digits for x in p) and any(x in string.ascii_letters for x in p) and any(x in string.punctuation for x in p) and (' ' not in p))

@@ -1,5 +1,6 @@
 import string
 str=string.ascii_letters
+
 #Prime Number
 def prime(p):
 	if p==1:
@@ -13,12 +14,13 @@ def prime(p):
 				break
 		else:
 			print('Prime number found')
+
 #Factorial
-def fact(p):
-	sum=1
-	for i in range(p,0,-1):
-		sum=sum*i
-	print('Factorial of the number is =',sum)
+def fact(n):
+    if n==0:
+        return 1
+    return n*fact(n-1)
+
 #Prime Factor
 def pfact(p):
     print('Prime factors =',end=' ')
@@ -31,19 +33,20 @@ def pfact(p):
             p/=i
     if p>2:
         print(p)
+
 p=int(input('Enter a number : '))
 while 1:
 	print('Square root of the number is =',p**0.5)
 	print('Square of the number is =',p**2)
 	print('Cube of the number is =',p**3)
-	fact(p)
+	print(f'\nFactorial of the number is = {p}! = {fact(p)}')
 	prime(p)
 	pfact(p)
 	def fun():
 		fun.a=input('\nEnter a new number (enter 0 to stop) : ')
 		if fun.a=='0':
 			exit()
-		elif (fun.a!='0' and any(x in str for x in fun.a)):
+		elif (any(x in str for x in fun.a)):
 			print('Enter a number or 0 only')
 			fun()
 	fun()
