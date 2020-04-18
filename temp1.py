@@ -1,6 +1,6 @@
 def insertion(x):
     for i in range(1, a):
-        return i
+        pass
 
 
 
