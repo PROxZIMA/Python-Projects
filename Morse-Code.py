@@ -18,10 +18,10 @@ Morse_Code_Dict_Inverted = dict(map(reversed, Morse_Code_Dict.items()))
 
 
 # Function to encrypt the input message according to the Morse Code Chart
-def encryption(message):   # Function to encrypt Alphabetical String
+def encryption(mes):   # Function to encrypt Alphabetical String
     cipher = ''
 
-    for text in message:
+    for text in mes:
 
         #Convert letters to morse code and combining them
         cipher = cipher + Morse_Code_Dict[text] + ' '
@@ -29,23 +29,13 @@ def encryption(message):   # Function to encrypt Alphabetical String
     return cipher
 
 # Function to decrypt the Morse Code according to the Morse Code Chart
-def decryption(message): #Function to decrpt Morse Code
+def decryption(mes): #Function to decrpt Morse Code
 
-    message += ' ' #Reads last Morse Code
     decipher = ''
-    morse = ''
 
-    for text in message:
-
-        if (text != ' '): #Checks no spaces
-
-            morse += text #Makes morse letter
-
-        else: #For spaces
-
-            #Converting morse code to letters
-            decipher += Morse_Code_Dict_Inverted[morse]
-            morse = '' #Resets variable
+    for text in mes:
+        #Converting morse code to letters
+        decipher += Morse_Code_Dict_Inverted[text]
 
     return decipher
 
@@ -54,13 +44,11 @@ try:
     while 1:
         if opt == '1':
             message = input('Enter the secret message : ')
-            result = encryption(message.upper())
-            print (result)
+            print(encryption(message.upper()))
 
         elif opt == '2':
             message = input('Enter the morse code : ')
-            result = decryption(message)
-            print (result)
+            print(decryption(message.split(' ')))
 
         else:
             print('Enter correct conversion keyword')

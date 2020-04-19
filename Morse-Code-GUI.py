@@ -61,7 +61,7 @@ def encryption():   # Function to encrypt Alphabetical String
         for text in message_upper:
 
             #Convert letters to morse code and combining them
-            cipher = cipher + Morse_Code_Dict[text] + ' '
+            cipher += Morse_Code_Dict[text] + ' '
 
         encode_block.e2.insert(tk.END, cipher)
 
@@ -73,26 +73,15 @@ def decryption(): #Function to decrpt Morse Code
     try:
         decode_block.e4.delete(0, tk.END)
 
-        morse_code_ = decode_block.morse_code.get() #Reads last Morse Code
+        morse_code_list = decode_block.morse_code.get().split(' ') #Reads last Morse Code
 
-        if morse_code_ == '':
+        if morse_code_list == '':
             messagebox.showinfo('Blank', 'This field can\'t be empty')
 
-        morse_code_ += ' '
         decipher = ''
-        morse = ''
 
-        for text in morse_code_:
-
-            if (text != ' '): #Checks no spaces
-
-                morse += text #Makes morse letter
-
-            else: #For spaces
-
-                #Converting morse code to letters
-                decipher += Morse_Code_Dict_Inverted[morse]
-                morse = '' #Resets variable
+        for text in morse_code_list:
+            decipher += Morse_Code_Dict_Inverted[text]
 
         decode_block.e4.insert(tk.END, decipher)
 
