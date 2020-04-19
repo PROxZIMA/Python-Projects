@@ -35,7 +35,7 @@ def helper():
     messagebox.showinfo('Basics', '1. This is a Morse Coder Translator created using Python 3.8\n2. Not all characters from Alphabetical language can be converted to Morse\n3. Chatacters like ~, `, #, %, *, <, >, [] and {} can\'t be converted\n4. If you want to try, you can!!!\n5. Also only meaningful combination of . and - can be converted from Morse to Alaphabet')
 
 def author():
-    messagebox.showinfo('Authors', 'Alex Sunny\nShrikant Dandge\nAtharva Bhosale\nTanay Zope\nPratik Pingale')
+    messagebox.showinfo('Authors', 'Pratik Pingale')
 
 #Clear Entry boxes
 def clear():
