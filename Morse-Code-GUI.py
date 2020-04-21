@@ -32,7 +32,14 @@ Morse_Code_Dict = { 'A':'.-', 'B':'-...', 'C':'-.-.', 'D':'-..', 'E':'.',
 Morse_Code_Dict_Inverted = dict(map(reversed, Morse_Code_Dict.items()))
 
 def helper():
-    messagebox.showinfo('Basics', '1. This is a Morse Coder Translator created using Python 3.8\n2. Not all characters from Alphabetical language can be converted to Morse\n3. Chatacters like ~, `, #, %, *, <, >, [] and {} can\'t be converted\n4. If you want to try, you can!!!\n5. Also only meaningful combination of . and - can be converted from Morse to Alaphabet')
+    '''
+    1. This is a Morse Coder Translator created using Python 3.8
+    2. Not all characters from Alphabetical language can be converted to Morse
+    3. Chatacters like ~, `, #, %, *, <, >, [] and {} can't be converted
+    4. If you want to try, you can!!!
+    5. Also only meaningful combination of . and - can be converted from Morse to Alaphabet
+    '''
+    messagebox.showinfo('Basics', helper.__doc__)
 
 def author():
     messagebox.showinfo('Authors', 'Pratik Pingale')
@@ -40,10 +47,8 @@ def author():
 #Clear Entry boxes
 def clear():
     try:
-        encode_block.e1.delete(0, tk.END)
-        encode_block.e2.delete(0, tk.END)
-        decode_block.e3.delete(0, tk.END)
-        decode_block.e4.delete(0, tk.END)
+        for i in range(1,5):
+            eval(f'encode_block.e{str(i)}.delete(0, tk.END)')
     except AttributeError:
         pass
 

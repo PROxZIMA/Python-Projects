@@ -24,7 +24,7 @@ def encryption(mes):   # Function to encrypt Alphabetical String
     for text in mes:
 
         #Convert letters to morse code and combining them
-        cipher = cipher + Morse_Code_Dict[text] + ' '
+        cipher += Morse_Code_Dict[text] + ' '
 
     return cipher
 
