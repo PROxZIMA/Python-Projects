@@ -8,7 +8,7 @@ def prime(p):
 	elif p%2==0:
 		print('Not a Prime Number')
 	elif p%2!=0:
-		for i in range (3,((p+1)//2),2):
+		for i in range (3,int(p**0.5),2):
 			if p%i==0:
 				print('Not a Prime number')
 				break
