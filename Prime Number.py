@@ -1,21 +1,25 @@
-import datetime
+import timeit
 
-t0=datetime.datetime.now()
+def prime():
+    p=99999989
+    # p=int(input('Enter a number : '))
+    if p==1:
+        pass
+        # print('1 is a uniqe number')
+    elif p%2==0:
+        pass
+        # print('Not a Prime Number')
+    elif p%3==0:
+        pass
+        # print('Not a Prime Number')
+    elif p%3!=0:
+        for i in range (5,int(p**0.5),6):
+            if p%i==0 or p%(i+2)==0:
+                pass
+                # print('Not a Prime number')
+                # break
+        else:
+            return p
+            # print('Prime number found')
 
-p=int(input('Enter a number : '))
-
-if p==1:
-	print('1 is a uniqe number')
-elif p%2==0:
-	print('Not a Prime Number')
-elif p%2!=0:
-	for i in range (3,int(p**0.5),2):
-		if p%i==0:
-			print('Not a Prime number')
-			break
-	else:
-		print('Prime number found')
-
-
-t1=datetime.datetime.now()
-print('Time taken = ', t1-t0)
+print(min(timeit.Timer(prime).repeat(10, 1000)))
