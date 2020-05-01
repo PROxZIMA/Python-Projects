@@ -1,5 +1,7 @@
 {
     "python.pythonPath": "C:\\Python\\python.exe",
     "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.fontFamily": "Consolas, Courier New, monospace",
+    "terminal.integrated.fontFamily": "monospace"
 }
