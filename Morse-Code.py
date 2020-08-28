@@ -26,7 +26,7 @@ def encryption(mes):   # Function to encrypt Alphabetical String
         #Convert letters to morse code and combining them
         cipher += Morse_Code_Dict[text] + ' '
 
-    return cipher
+    return cipher.strip()
 
 # Function to decrypt the Morse Code according to the Morse Code Chart
 def decryption(mes): #Function to decrpt Morse Code
@@ -41,7 +41,7 @@ def decryption(mes): #Function to decrpt Morse Code
 
 try:
     opt = input('1) Alphabet to Mores (1)\n2) Morse to Alphabet (2)\nSelect the conversion you want : ')
-    while 1:
+    while True:
         if opt == '1':
             message = input('Enter the secret message : ')
             print(encryption(message.upper()))

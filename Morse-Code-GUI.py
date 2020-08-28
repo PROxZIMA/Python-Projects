@@ -67,7 +67,7 @@ def encryption():   # Function to encrypt Alphabetical String
             #Convert letters to morse code and combining them
             cipher += Morse_Code_Dict[text] + ' '
 
-        encode_block.e2.insert(tk.END, cipher)
+        encode_block.e2.insert(tk.END, cipher.strip())
 
     except KeyError:
         messagebox.showerror('Error', 'Improper characters detected')

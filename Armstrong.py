@@ -1,4 +1,4 @@
-print('An Armstrong number is an integer with \'n\' digits such that the sum of \'nth\' power of it\'s digits is equal to the number itself.')
+# print('An Armstrong number is an integer with \'n\' digits such that the sum of \'nth\' power of it\'s digits is equal to the number itself.')
 a=input('Enter any number : ')
 sum=0
 for i in a:

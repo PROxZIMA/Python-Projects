@@ -1,25 +1,26 @@
 import timeit
+setup = 'from math import sqrt'
 
+code = '''
 def prime():
-    p=99999989
-    # p=int(input('Enter a number : '))
-    if p==1:
-        pass
-        # print('1 is a uniqe number')
-    elif p%2==0:
-        pass
-        # print('Not a Prime Number')
-    elif p%3==0:
-        pass
-        # print('Not a Prime Number')
-    elif p%3!=0:
-        for i in range (5,int(p**0.5),6):
-            if p%i==0 or p%(i+2)==0:
-                pass
-                # print('Not a Prime number')
-                # break
-        else:
-            return p
-            # print('Prime number found')
+    p = 99999989
+    # p = int(input('Enter a number : '))
+    if p <= 1:
+        return False
 
-print(min(timeit.Timer(prime).repeat(10, 1000)))
+    elif p <= 3:
+        return True
+
+    elif p % 2 == 0 or p % 3 == 0:
+        return False
+
+    else:
+        for i in range (5, int(sqrt(p)) + 1, 6):
+            if p % i == 0 or p % (i + 2) == 0:
+                return False
+        else:
+            return True
+'''
+# print(prime())
+
+print(timeit.timeit(setup = setup, stmt = code, number = 1000000))
